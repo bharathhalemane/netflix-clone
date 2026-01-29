@@ -1,0 +1,20 @@
+.footer-section{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 30px;
+}
+
+.contact-icons{
+    margin-top: 40px;
+    display: flex;
+    gap: 30px;
+    font-size: 2rem;
+}
+
+
+.contact p{
+    color: #f3f3f3;
+    font-size: 1.2rem;
+}

@@ -1,0 +1,44 @@
+.navbar{
+    display: flex;
+    padding: 20px 100px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #13131337;    
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+
+.links-container{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-left: 40px;
+}
+
+.navbar-links{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-links button{
+    background-color: transparent;
+    border: none;
+    color: #b3b3b3;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.active-button{
+    font-weight: bold;
+    color: white !important;
+}
+
+.avatar-container{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}

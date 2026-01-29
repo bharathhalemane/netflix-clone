@@ -1,0 +1,28 @@
+.home-page{
+    width: 100%;
+    background-color: black;   
+    padding-bottom: 40px;     
+}
+
+.banner-section{
+    width: 100%;
+    margin: 0;
+}
+
+.movies-list{
+    margin-bottom: 20px;
+}
+.movies-list h1{
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.movies-list img{
+    width: 250px;   
+    border-radius: 8px;     
+}
+
+.movies-lists-container{
+    padding: 20px 60px;
+}
