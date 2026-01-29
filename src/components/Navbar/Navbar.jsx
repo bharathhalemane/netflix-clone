@@ -25,7 +25,7 @@ const Navbar = props => {
                     <Link to="/search-page"><IoMdSearch color="white" size={20} /></Link>
                 </div>
                 <div className="navbar-avatar"> 
-                    <img src="https://res.cloudinary.com/dfomcgwro/image/upload/v1769708073/Group_anj9qw.png" alt="User Avatar" width={30}/>
+                    <Link to="/profile"><img src="https://res.cloudinary.com/dfomcgwro/image/upload/v1769708073/Group_anj9qw.png" alt="User Avatar" width={30}/></Link>
                 </div>
             </div>
         </nav>
