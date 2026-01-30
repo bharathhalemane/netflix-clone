@@ -22,7 +22,7 @@ const Navbar = props => {
             </div>
             <div className='avatar-container'>
                 <div className="navbar-search">
-                    <Link to="/search-page"><IoMdSearch color="white" size={20} /></Link>
+                    <Link to="/search"><IoMdSearch color="white" size={20} /></Link>
                 </div>
                 <div className="navbar-avatar"> 
                     <Link to="/profile"><img src="https://res.cloudinary.com/dfomcgwro/image/upload/v1769708073/Group_anj9qw.png" alt="User Avatar" width={30}/></Link>

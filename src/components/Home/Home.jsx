@@ -37,21 +37,18 @@ const Home = () => {
             const trendingData = await trendingResponse.json();
             const formattedTrendingData = trendingData.results.map(movie => formatData(movie));
             setTrendingMovies(formattedTrendingData);
-            console.log(formattedTrendingData);
 
             const originalsUrl = 'https://apis.ccbp.in/movies-app/originals';
             const originalsResponse = await fetch(originalsUrl, option);            
             const originalsData = await originalsResponse.json();
             const formattedOriginalsData = originalsData.results.map(movie => formatData(movie));
             setOriginalMovies(formattedOriginalsData);
-            console.log(formattedOriginalsData);
 
             const topRatedUrl = 'https://apis.ccbp.in/movies-app/top-rated-movies';
             const topRatedResponse = await fetch(topRatedUrl, option);
             const topRatedData = await topRatedResponse.json();
             const formattedTopRatedData = topRatedData.results.map(movie => formatData(movie));
             setTopRatedMovies(formattedTopRatedData);
-            console.log(formattedTopRatedData);
 
         }
         fetchMovies();
