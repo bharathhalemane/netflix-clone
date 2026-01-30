@@ -74,7 +74,7 @@ const SearchPage = () => {
                     <button className="search-button" type="submit"><IoMdSearch  color="white" size={20} /></button>
                 </form>
                 <div className="navbar-avatar"> 
-                    <Link to="/profile"><img src="https://res.cloudinary.com/dfomcgwro/image/upload/v1769708073/Group_anj9qw.png" alt="User Avatar" width={30}/></Link>
+                    <Link to="/account"><img src="https://res.cloudinary.com/dfomcgwro/image/upload/v1769708073/Group_anj9qw.png" alt="User Avatar" width={30}/></Link>
                 </div>
             </div>
         </nav>
