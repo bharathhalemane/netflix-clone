@@ -10,6 +10,7 @@ import ProtectedRoute from './components/ProtectedRoute/index.jsx'
 import SearchPage from './components/SearchPage/SearchPage.jsx'
 import Account from './components/Account/Account.jsx'
 import AuthContext from './context/AuthContext/AuthContext.jsx'
+import MoviesDetails from './components/MoviesDetails/MoviesDetails.jsx'
 import {useState } from "react"
 function App() {
   const [username, setUsername] = useState("")
@@ -30,6 +31,7 @@ function App() {
           <Route path="/popular" element={<ProtectedRoute><Popular /></ProtectedRoute>} />
           <Route path="/search" element={<ProtectedRoute><SearchPage /></ProtectedRoute>} />
           <Route path="/account" element={<ProtectedRoute><Account /></ProtectedRoute>} />
+          <Route path="/movie/:id" element={<ProtectedRoute><MoviesDetails /></ProtectedRoute>} />
           <Route path="/not-found" element={<ProtectedRoute><NotFound /></ProtectedRoute>} />
           <Route path="*" element={<Navigate to="/not-found" />} />
         </Routes>

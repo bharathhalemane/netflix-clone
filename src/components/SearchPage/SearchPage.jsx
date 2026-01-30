@@ -98,7 +98,7 @@ const SearchPage = () => {
         <div className="searched-movies-list">
             {
                 searchedMovies.length > 0 ? searchedMovies.map(movie => (
-                    <Link to={`/movie/${movie.id}`} ><img src={movie.backdropPath} alt={ movie.title} /></Link>
+                    <Link key={movie.id } to={`/movie/${movie.id}`} ><img src={movie.backdropPath} alt={ movie.title} /></Link>
                 )) : <div className='no-search-found'>
                         <img src="https://res.cloudinary.com/dfomcgwro/image/upload/v1769719647/Group_7394_jybdnq.png" alt="no result" />
                         <p>Your search for {searchInput} did not find any matches.</p>

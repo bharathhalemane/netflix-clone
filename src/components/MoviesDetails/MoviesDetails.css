@@ -1,0 +1,98 @@
+.movie-detail-page{
+    background-color: #000;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+
+.load-spinner{
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.failure-view{
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.failure-view p{
+    color: #f3f3f3;
+}
+
+.failure-view button{
+    background-color: #fff;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.duration-con{
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    gap: 20px;
+}
+
+.certificate{
+    border: 1px solid #fff;
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-size: 13px;
+}
+
+.description{
+    font-size: 15px;
+    width: 50%;
+    letter-spacing: 1px;
+}
+
+.additional-details{
+    display: flex;
+    justify-content: space-around;
+    padding: 0 5vw;
+    color: #ffffff;
+}
+
+ul{
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.additional-details-heading{
+    color: #94a3b8;
+    font-size: 15px;
+    margin: 10px 0;
+}
+.similar-movies{
+    margin-inline-start: 12vw;
+}
+.similar-movies h1{
+    color: #fff;
+    font-size: 20px;
+    margin-block: 20px;
+}
+
+.similar-movies-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 80vw;
+    gap: 30px;
+}
+
+.similar-movies-list img{
+    width:250px;
+    border-radius:  10px;
+}
