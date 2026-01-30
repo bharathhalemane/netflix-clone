@@ -1,29 +1,82 @@
-.home-page{
+.home-page {
     width: 100%;
-    background-color: black;   
-    padding-bottom: 40px;     
+    background-color: #181818;
+    padding-bottom: 40px;
     min-height: 100vh;
 }
 
-.banner-section{
+.banner-section {
     width: 100%;
     margin: 0;
 }
 
-.movies-list{
+.movies-list {
     margin-bottom: 20px;
 }
-.movies-list h1{
+
+.movies-list h1 {
     color: #fff;
     margin-bottom: 15px;
     font-size: 1rem;
 }
 
-.movies-list img{
-    width: 250px;   
-    border-radius: 8px;     
+.movies-list img {
+    width: 250px;
+    border-radius: 8px;
 }
 
-.movies-lists-container{
+.movies-lists-container {
     padding: 20px 60px;
+}
+
+.movies-lists-container h1{
+    color: #fff;
+    margin: 15px;
+    font-size: 1rem;
+}
+
+.load-spinner {    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-section-loading {
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;  
+    gap: 30px;
+}
+
+.failed-container{
+    color: #fff;
+}
+
+.failed-container .icon{
+    width: 48px;
+}
+
+.failed-container button{
+    background-color: #fff;
+    color: #000;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.section-loading{
+    max-height: 170px;
+    background-color: #000;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
 }

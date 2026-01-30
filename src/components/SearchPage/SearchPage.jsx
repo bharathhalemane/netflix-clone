@@ -3,10 +3,19 @@ import {Link} from 'react-router-dom'
 import { IoMdSearch } from "react-icons/io";
 import { useState, useEffect } from "react"
 import Cookies from 'js-cookie'
+import { TailSpin } from 'react-loader-spinner'
+import Footer from '../Footer/Footer';
+
+const apiProgress = {
+    inProgress: "INPROGRESS",
+    success: "SUCCESS",
+    failed : "FAILED"
+}
 
 const SearchPage = () => {
     const [searchInput, setSearchInput] = useState("")
     const [searchedMovies, setSearchedMovies] = useState([])
+    const [apiStatus, setApiStatus] = useState(apiProgress.inProgress)    
 
     const formatData = data => ({
         id: data.id,
@@ -17,18 +26,28 @@ const SearchPage = () => {
     })
 
     const getSearchedMovie = async () => {
-        const jwtToken = Cookies.get("jwt_token")
-        const url = `https://apis.ccbp.in/movies-app/movies-search?search=${searchInput}`
-        const option = {
-            method: "GET",
-            headers: {
-                Authorization: `Bearer ${jwtToken}`
+        setApiStatus(apiProgress.inProgress)
+        try {
+            const jwtToken = Cookies.get("jwt_token")
+            const url = `https://apis.ccbp.in/movies-app/movies-search?search=${searchInput}`
+            const option = {
+                method: "GET",
+                headers: {
+                    Authorization: `Bearer ${jwtToken}`
+                }
+            }
+            const response = await fetch(url, option)
+            if (response.ok) {
+                setApiStatus(apiProgress.success)
+                const data = await response.json()
+                const formatedData = data.results.map(movie => formatData(movie));
+                setSearchedMovies(formatedData);
+            } else {
+                setApiStatus(apiProgress.failed)
             }            
+        } catch (err) {
+            setApiStatus(apiProgress.failed)
         }
-        const response = await fetch(url, option)
-        const data = await response.json()
-        const formatedData = data.results.map(movie => formatData(movie));
-        setSearchedMovies(formatedData);
     }
 
     useEffect(() => {
@@ -60,8 +79,22 @@ const SearchPage = () => {
             </div>
         </nav>
     }
-    return <div className="search-page">
-        {navbar()}
+
+    const renderLoader = () => {
+        return (
+            <div className='load-spinner'>
+                <TailSpin
+                    height="40"
+                    width="40"
+                    color="#e61515"
+                    ariaLabel="tail-spin-loading"
+                    visible={true}
+                />
+            </div>
+        )
+    }
+
+    const renderSuccessView = () => (
         <div className="searched-movies-list">
             {
                 searchedMovies.length > 0 ? searchedMovies.map(movie => (
@@ -72,6 +105,32 @@ const SearchPage = () => {
                 </div>
             }
         </div>
+    )
+
+    const renderFailureView = () => (
+        <div className='failure-view'>
+            <img src="https://res.cloudinary.com/dfomcgwro/image/upload/v1769760921/Background-Complete_w03eyv.png" alt="failure" />
+            <p>Something went wrong. Please try again</p>
+            <button onClick={getPopularMoviesData}>Try Again</button>
+        </div>
+    )
+
+    const renderContent = () => {
+        switch (apiStatus) {
+            case apiProgress.inProgress:
+                return renderLoader()
+            case apiProgress.success:
+                return renderSuccessView()
+            case apiProgress.failed:
+                return renderFailureView()
+            default: 
+                return null 
+        }
+    }
+    return <div className="search-page">
+        {navbar()}
+        {renderContent()}
+        <Footer/>
     </div>
 
 }

@@ -15,3 +15,32 @@
 .popular-movies-list img{
     width: 300px;
 }
+
+.load-spinner{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.failure-view{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.failure-view p{
+    color: #f3f3f3;
+}
+
+.failure-view button{
+    background-color: #fff;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
