@@ -127,7 +127,7 @@ const Home = () => {
 
     const bannerSection = () => {
         var settings = {
-            dots: true,
+            dots: false,
             infinite: true,
             speed: 1000,
             slidesToShow: 1,
@@ -196,7 +196,7 @@ const Home = () => {
             swipeToSlide: true,
             arrows: true
         };
-        return <div className='movies-list'>            
+        return <div className='movies-list'>
             <Slider {...settings}>
                 {
                     trendingMovies.map(movie => (
@@ -209,7 +209,7 @@ const Home = () => {
 
     const renderTrendingMoviesList = () => {
         switch (trendingMoviesStatus) {
-            case apiProgress.inProgress:   
+            case apiProgress.inProgress:
                 return renderLoaderView()
             case apiProgress.success:
                 return trendingMoviesList()
@@ -217,7 +217,7 @@ const Home = () => {
                 return renderFailureView()
             default: null
         }
-    }   
+    }
 
     const originalsMoviesList = () => {
         var settings = {
@@ -242,7 +242,7 @@ const Home = () => {
 
     const renderOriginalMoviesList = () => {
         switch (originalMoviesStatus) {
-            case apiProgress.inProgress:   
+            case apiProgress.inProgress:
                 return renderLoaderView()
             case apiProgress.success:
                 return originalsMoviesList()
@@ -250,7 +250,7 @@ const Home = () => {
                 return renderFailureView()
             default: null
         }
-    }   
+    }
 
     const topRatedMoviesList = () => {
         var settings = {
@@ -260,7 +260,7 @@ const Home = () => {
             slidesToShow: 5,
             slidesToScroll: 1,
             swipeToSlide: true,
-            arrows: false
+            arrows: true
         };
         return <div className='movies-list'>
             <Slider {...settings}>
@@ -275,7 +275,7 @@ const Home = () => {
 
     const renderTopRatedMoviesList = () => {
         switch (topRatedMoviesStatus) {
-            case apiProgress.inProgress:   
+            case apiProgress.inProgress:
                 return renderLoaderView()
             case apiProgress.success:
                 return topRatedMoviesList()
@@ -283,7 +283,7 @@ const Home = () => {
                 return renderFailureView()
             default: null
         }
-    }   
+    }
 
     return <div className="home-page">
         <Navbar activeId="home" />
@@ -293,7 +293,7 @@ const Home = () => {
         <div className='movies-lists-container'>
             <h1>Trending Now</h1>
             {renderTrendingMoviesList()}
-            <h1>Originals</h1> 
+            <h1>Originals</h1>
             {renderOriginalMoviesList()}
             <h1>Top Rated</h1>
             {renderTopRatedMoviesList()}

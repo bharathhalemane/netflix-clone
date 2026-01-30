@@ -1,6 +1,6 @@
 .home-page {
     width: 100%;
-    background-color: #181818;
+    background-color: #000;
     padding-bottom: 40px;
     min-height: 100vh;
 }
@@ -42,13 +42,14 @@
 }
 
 .banner-section-loading {
-    background-color: #000;
+    background-color: #0d0d0d;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 10px;  
     gap: 30px;
+    min-height: 60vh;
 }
 
 .failed-container{
@@ -71,7 +72,7 @@
 
 .section-loading{
     max-height: 170px;
-    background-color: #000;
+    background-color: #0d0d0d;
     border-radius: 10px;
     display: flex;
     flex-direction: column;

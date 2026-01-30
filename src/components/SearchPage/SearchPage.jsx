@@ -111,9 +111,10 @@ const SearchPage = () => {
         <div className='failure-view'>
             <img src="https://res.cloudinary.com/dfomcgwro/image/upload/v1769760921/Background-Complete_w03eyv.png" alt="failure" />
             <p>Something went wrong. Please try again</p>
-            <button onClick={getPopularMoviesData}>Try Again</button>
+            <button onClick={getSearchedMovie}>Try Again</button>
         </div>
     )
+    
 
     const renderContent = () => {
         switch (apiStatus) {

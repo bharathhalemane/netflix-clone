@@ -1,0 +1,77 @@
+.account-page {
+    height: 100vh;
+    background-color: #000;
+    padding-top: 15vh;
+}
+
+.account-details-container {
+    height: 60vh;
+    background-color: #fff;
+    padding: 30px 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.membership-details {
+    display: flex;
+    align-self: start;
+    gap: 40px;
+}
+
+.membership-details h1 {
+    font-size: 24px;
+    color: #94a3b8;
+}
+
+.membership-details div {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.membership-details .username {
+    color: #1e293b;
+}
+
+.membership-details .password {
+    color: #94a3b8;    
+}
+
+hr {
+    border: 1px solid #94a3b8;
+}
+
+.planDetails{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.planDetails h1{
+    font-size: 24px;
+    color: #94a3b8;
+}
+
+.planDetails p{
+    color: #1e293b;
+    font-weight: 300;
+}
+
+.planDetails span{
+    border: 1px solid #000;
+    font-size: 15px;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+.logout-btn{
+    width: fit-content;
+    align-self: center;
+    padding: 10px 20px;
+    background: #e50914;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: #fff;
+}
+

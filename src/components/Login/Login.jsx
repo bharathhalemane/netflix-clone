@@ -2,12 +2,15 @@ import "./Login.css"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import { useContext } from "react"
+import AuthContext from "../../context/AuthContext/AuthContext";
 
 const Login = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
     const navigate = useNavigate();
+    const { login } = useContext(AuthContext)
 
     const onChangeUsername = e => {
         setUsername(e.target.value);
@@ -18,17 +21,21 @@ const Login = () => {
     }
 
     const onSubmitSuccess = jwtToken => {
-        Cookies.set("jwt_token", jwtToken, { expires:30 });
+        Cookies.set("jwt_token", jwtToken, { expires: 30 });
+        login({
+            username,
+            password
+        })
         navigate("/");
     }
 
     const onSubmitLoginForm = async (e) => {
         e.preventDefault();
         try {
-            const url =  "https://apis.ccbp.in/login"
+            const url = "https://apis.ccbp.in/login"
 
             const options = {
-                method: "POST",                
+                method: "POST",
                 body: JSON.stringify({ username, password })
             }
             const response = await fetch(url, options);
@@ -44,7 +51,7 @@ const Login = () => {
         } catch (err) {
             console.log(err)
         }
-        
+
     }
 
 
