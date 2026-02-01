@@ -101,7 +101,7 @@ const MoviesDetails = () => {
 
 
     const renderMovieDetail = () => {
-        const { backdropPath, title, runtime, releaseDate,  overview, genres, spokenLanguages, voteAverage, voteCount, budget, similarMovies} = movieDetails
+        const { backdropPath, title, runtime, releaseDate,  overview, genres, spokenLanguages, voteAverage, voteCount, budget, similarMovies,adult} = movieDetails
         const minutes = runtime
         const hours = Math.floor(minutes / 60)
         const mins = minutes % 60
@@ -111,11 +111,11 @@ const MoviesDetails = () => {
         const year = getYear(date)
         console.log(similarMovies)
         return <div>
-            <BannerSection bgImage={backdropPath}>
+            <BannerSection $bgImage={backdropPath}>
                 <h1>{title}</h1>
                 <div className='duration-con'>
                     <p>{duration}</p>
-                    <p className="certificate">U/A</p>
+                    <p className="certificate">{adult ? "A" : "U/A"}</p>
                     <p>{year}</p>
                 </div>
                 <p className='description'>{overview}</p>

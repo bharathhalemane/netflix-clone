@@ -13,7 +13,7 @@ export const BannerSection = styled.div`
     margin: 0;
     padding-top: 150px;    
     background-blend-mode: multiply;
-    background-image: linear-gradient(#00000099 80%, #000000), url(${props => props.bgImage});
+    background-image: linear-gradient(#00000099 80%, #000000), url(${props => props.$bgImage});
 
     .banner-title{
         font-size: 3rem;

@@ -141,7 +141,7 @@ const Home = () => {
         return (
             <Slider {...settings}>
                 {topRatedMovies.map(movie => (
-                    <BannerSection key={movie.id} bgImage={movie.backdropPath}>
+                    <BannerSection key={movie.id} $bgImage={movie.backdropPath}>
                         <div>
                             <h1 className="banner-title">{movie.title}</h1>
                             <p className="banner-overview">{movie.overview}</p>

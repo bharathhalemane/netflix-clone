@@ -1,6 +1,4 @@
 import './Account.css'
-import { useContext } from 'react'
-import AuthContext from '../../context/AuthContext/AuthContext'
 import Navbar from '../Navbar/Navbar'
 import Footer from '../Footer/Footer'
 import Cookies from "js-cookie"
@@ -17,6 +15,7 @@ const Account = () => {
         Cookies.remove("jwt_token")
         navigate("/login")
     }
+    
     return <div className='account-page'>
         <Navbar />
         <div className='account-details-container'>
